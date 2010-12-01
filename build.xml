@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!--+
-    |
-    |  Google Refine Extension Sample Extension Build File    
-    |                
-    +-->
     
-<project name="refine-sample-extension" default="build" basedir=".">
+<project name="openmedia-refine" default="build" basedir=".">
 
     <property environment="env"/>
 
@@ -28,26 +22,27 @@
 
     <property name="fullname" value="${name}-${version}-${revision}" />
     
-    <property name="refine.dir" value="${basedir}/../../main" />
+    <property name="refine.dir" value="/Applications/Google Refine.app/Contents/Resources" />
     <property name="refine.webinf.dir" value="${refine.dir}/webapp/WEB-INF" />
-    <property name="refine.modinf.dir" value="${refine.dir}/webapp/modules/core/MOD-INF" />
-    <property name="refine.classes.dir" value="${refine.webinf.dir}/classes" />
     <property name="refine.lib.dir" value="${refine.webinf.dir}/lib" />
+    <property name="refine.java.dir" value="${refine.dir}/Java" />
     
     <property name="src.dir" value="${basedir}/src" />
-    <property name="module.dir" value="${basedir}/module" />
+    <property name="module.dir" value="${basedir}/openmedia/module" />
     <property name="modinf.dir" value="${module.dir}/MOD-INF" />
-    <property name="lib.dir" value="${modinf.dir}/lib" />
+    <!--<property name="lib.dir" value="${modinf.dir}/lib" />-->
     <property name="classes.dir" value="${modinf.dir}/classes" />
 
     <path id="class.path">
-        <fileset dir="${lib.dir}">
+        <!--<fileset dir="${lib.dir}">
             <include name="**/*.jar" />
-        </fileset>
+        </fileset>-->
         <fileset dir="${refine.lib.dir}">
             <include name="**/*.jar" />
         </fileset>
-        <pathelement path="${refine.classes.dir}"/>
+        <fileset dir="${refine.java.dir}">
+            <include name="**/*.jar" />
+        </fileset>
     </path>
             
     <target name="build_java">
