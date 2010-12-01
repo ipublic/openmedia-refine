@@ -36,5 +36,13 @@
 	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/webapp/WEB-INF/lib/velocity-1.5.jar"/>
 	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/webapp/WEB-INF/lib/vicino-1.1.jar"/>
 	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/webapp/WEB-INF/lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/Java/google-refine-2.0-r1836-server.jar"/>
+	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/Java/jdatapath-alpha2.jar"/>
+	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/Java/jetty-6.1.22.jar"/>
+	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/Java/jetty-util-6.1.22.jar"/>
+	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/Java/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/Java/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/Java/slf4j-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="/Applications/Google Refine.app/Contents/Resources/Java/slf4j-log4j12-1.5.6.jar"/>
 	<classpathentry kind="output" path="module/MOD-INF/classes"/>
 </classpath>

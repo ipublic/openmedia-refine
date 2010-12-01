@@ -1,3 +1,9 @@
+$.ajaxSetup({"error":function(XMLHttpRequest,textStatus, errorThrown) {   
+      alert(textStatus);
+      alert(errorThrown);
+      alert(XMLHttpRequest.responseText);
+  }});
+
 function OpenMediaLoadDialog() {
     this._createDialog();
     //this._signedin = false;
@@ -8,10 +14,10 @@ OpenMediaLoadDialog.prototype._createDialog = function() {
     var dialog = $(DOM.loadHTML("openmedia", "scripts/load-dialog.html"));
     this._elmts = DOM.bind(dialog);
     this._elmts.cancelButton.click(function() { self._dismiss(); });
-    var loadButton = this._elmts.loadButton;    
-
-    self._elmts.functionalCase.show();
-    self._level = DialogSystem.showDialog(dialog);
+    $.getJSON('/command/openmedia/get-catalogs', null, function(data) {
+	self._elmts.functionalCase.show().text(data.value);
+	self._level = DialogSystem.showDialog(dialog);	
+    });
 };
 
 OpenMediaLoadDialog.prototype._load = function() {
