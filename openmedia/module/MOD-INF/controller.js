@@ -12,6 +12,7 @@ function init() {
 
     var RS = Packages.com.google.refine.RefineServlet;
     RS.registerCommand(module, "get-catalogs", new Packages.org.openmedia.refine.commands.GetCatalogsCommand());
+    RS.registerCommand(module, "load-dataset", new Packages.org.openmedia.refine.commands.LoadDatasetCommand());
     
     // Script files to inject into /project page
     ClientSideResourceManager.addPaths(

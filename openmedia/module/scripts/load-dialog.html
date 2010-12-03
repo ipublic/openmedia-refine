@@ -1,10 +1,33 @@
-<div class="dialog-frame" style="width: 600px;">
-  <div class="dialog-header" bind="dialogHeader">Load Data into OpenMedia Server</div>
+<div class="dialog-frame" style="width: 700px;">
+  <div class="dialog-header" bind="dialogHeader">Load Data into OpenMedia Dataset</div>
   <div class="dialog-body" bind="dialogBody">    
-    <div bind="functionalCase" style="display: none;">
-      <p class="body-text">OpenMedia Load Dialog</p>
+    <div class="grid-layout layout-normal">
+      <table border="0">
+        <tr>
+	  <td>OpenMedia Server URL:</td>
+          <td colspan="2"><input id="openmedia-url" type="text" size="40"/>&nbsp;<button class="button" bind="getCatalogsButton">Get Catalogs</button></td>
+        </tr>
+        <tr>
+	  <td width="35%">Dataset Title:</td>
+          <td colspan="2"><input id="dataset-title" type="text" size="30"/></td>
+        </tr>
+        <tr>
+	  <td width="35%">Description:</td>
+          <td colspan="2"><input id="dataset-description" type="text" size="30"/></td>
+        </tr>
+        <tr>
+	  <td width="35%">Keywords (separated by commas):</td>
+          <td colspan="2"><input id="dataset-keywords" type="text" size="30"/></td>
+        </tr>
+        <tr>
+	  <td style="vertical-align: top">Catalogs:</td>
+          <td colspan="2">
+	    <select id="dataset-catalogs" multiple="multiple" style="width: 290px"></select>
+	  </td>
+        </tr>
+      </table>
     </div>
-    <div bind="errorCase" style="display: none;" class="freebase-loading-tripleloader-message">
+    <div bind="errorCase" style="display: none;">
       <h2 bind="errorMessage"></h2>
       <div bind="errorDetails"></div>
     </div>
@@ -14,7 +37,7 @@
       <button class="button" bind="cancelButton" id="freebase-loading-cancel">Cancel</button>
     </td>
     <td bind="right" style="text-align: right" width="40%" nowrap="true">
-      <button class="button button-primary button-disabled" bind="loadButton" id="openmedia-loading-load" disabled>Load to OpenMedia Dataset</button>
+      <button class="button button-primary button-disabled" bind="loadButton" id="openmedia-loading-load">Load OpenMedia Dataset</button>
     </td>
   </tr></table></div></div>
 </div>
