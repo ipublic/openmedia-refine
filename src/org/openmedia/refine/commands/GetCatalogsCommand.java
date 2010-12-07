@@ -28,9 +28,14 @@ public class GetCatalogsCommand extends Command {
     	HttpGet httpGet = new HttpGet(openmediaURL+"/admin/catalogs.json");
     	HttpResponse httpResponse = httpClient.execute(httpGet);
     	HttpEntity httpEntity = httpResponse.getEntity();
-    	response.setContentType("application/json");
-    	ServletOutputStream outputStream = response.getOutputStream();
-		httpEntity.writeTo(outputStream);
-		outputStream.close();
+    	if (httpResponse.getStatusLine().getStatusCode()==200) {
+    		response.setContentType("application/json");
+        	ServletOutputStream outputStream = response.getOutputStream();
+    		httpEntity.writeTo(outputStream);
+    	}
+    	else {
+    		response.setStatus(500);
+    		httpEntity.writeTo(response.getOutputStream());
+    	}    	    			
     }
 }

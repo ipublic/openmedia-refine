@@ -58,8 +58,12 @@ public class LoadDatasetCommand extends Command {
         		String catID = catalogIDs[i];
         		entity.addPart("dataset[catalog_ids][]", new StringBody(catID));
         	}
-        	entity.addPart("dataset[metadata][description]", new StringBody(description));
-        	entity.addPart("dataset[metadata][keywords]", new StringBody(keywords));
+        	if (description!=null && !description.equals(""))
+        		entity.addPart("dataset[metadata][description]", new StringBody(description));
+        	
+        	if (keywords!=null && !keywords.equals(""))
+        		entity.addPart("dataset[metadata][keywords]", new StringBody(keywords));
+        	
         	entity.addPart("dataset[delimiter_character]", new StringBody(","));
         	entity.addPart("dataset[has_header_row]", new StringBody("1"));
         	

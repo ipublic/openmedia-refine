@@ -51,6 +51,7 @@ OpenMediaLoadDialog.prototype._getCatalogs = function() {
 };
 
 OpenMediaLoadDialog.prototype._loadDataset = function() {
+    var self = this;
     var errors = [];
     var openmediaURL = $('#openmedia-url').val();
     var title = $('#dataset-title').val();
@@ -75,7 +76,7 @@ OpenMediaLoadDialog.prototype._loadDataset = function() {
 		       
 	$.ajax({url: '/command/openmedia/load-dataset', data: params, 
 		success: function() {
-		    alert('loaded');
+		    self._dismiss();
 		},
 		error: function(xhr, textStatus, errorThrown) {
 		    alert('Error: ' + xhr.responseText);
